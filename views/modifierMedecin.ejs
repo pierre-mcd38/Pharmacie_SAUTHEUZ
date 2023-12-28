@@ -1,0 +1,40 @@
+<!-- modifierMedecin.ejs -->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<%= style %>">
+    <title>Modifier Médecin</title>
+</head>
+
+<body>
+    <header>
+        <h1>Pharmacie SAUTHEUZ</h1>
+    </header>
+    <h1>Modifier Médecin</h1>
+    <div class="sidebar">
+        <a href="/#" class="button"><img src="<%= logo %>" height="60px" width="60px"></a>
+        <hr>
+        <a href="/medecins/afficher">Médecin</a>
+        <a href="/ordonnance">Ordonnance</a>
+        <a href="">Autre</a>
+        <a href="">A propos</a>
+        <a href="">Contact</a>
+    </div>
+    <form action="/medecins/modifier" method="POST">
+        <input type="text" name="medId" value="<%= medecin.med_id %>">
+
+        <label for="medNom">Nom:</label>
+        <input type="text" id="medNom" name="medNom" value="<%= medecin.med_nom %>" required>
+
+        <label for="medPrenom">Prénom:</label>
+        <input type="text" id="medPrenom" name="medPrenom" value="<%= medecin.med_prenom %>" required>
+
+        <button type="submit">Envoyer</button>
+    </form>
+</body>
+
+</html>

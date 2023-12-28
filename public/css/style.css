@@ -1,0 +1,63 @@
+body {
+    margin-left: 275px; /* Ajoutez la largeur de la barre latérale à la marge droite du body */
+    background-image: url('/public/images/fond_Pharmacie.jpg');
+}
+
+.sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #6FC27C; 
+    color: #0F4D19;
+    padding-top: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    font-size: 30px;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    color: #0F4D19;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.sidebar a:hover {
+    background-color: #555;
+}
+
+header {
+    background-color: #0F4D19;
+    color: #6FC27C; 
+    padding: 23px;
+    margin-top: -10px;
+    margin-left: -25px;
+    text-align: center; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr {
+    border-bottom: 1px solid #dddddd;
+  }

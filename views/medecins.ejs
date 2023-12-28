@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<%= style %>">
+    <title>Medecins</title>
+</head>
+
+<body>
+    <header>
+        <h1>Pharmacie SAUTHEUZ</h1>
+    </header>
+    <h1>Liste des médecins</h1>
+    <div class="sidebar">
+        <a href="/#" class="button"><img src="<%= logo %>" height="60px" width="60px"></a>
+        <hr>
+        <a href="/medecins/afficher">Médecin</a>
+        <a href="/ordonnance">Ordonnance</a>
+        <a href="">Autre</a>
+        <a href="">A propos</a>
+        <a href="">Contact</a>
+    </div>
+    <form action="/medecins/ajouter" method="post">
+        <label for="medNom">Nom:</label>
+        <input type="text" id="medNom" name="medNom" required>
+
+        <label for="medPrenom">Prénom:</label>
+        <input type="text" id="medPrenom" name="medPrenom" required>
+
+        <button type="submit">Ajouter Médecin</button>
+    </form>
+    <br>
+    <% if (medecin && medecin.length) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% medecin.forEach(medecin => { %>
+                    <tr>
+                        <td><%= medecin.med_id %></td>
+                        <td><%= medecin.med_nom %></td>
+                        <td><%= medecin.med_prenom %></td>
+                        <td>
+                            <a href="/medecins/modifier/<%= medecin.med_id %>">Modifier</a>
+                            
+                            <form action="/medecins/supprimer/<%= medecin.med_id %>" method="POST">
+                                <button type="submit">Supprimer</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+        <% } else { %>
+            <p>Aucun médecin disponible.</p>
+            <% } %>
+</body>
+
+</html>
