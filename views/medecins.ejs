@@ -32,7 +32,7 @@
         <button type="submit">Ajouter Médecin</button>
     </form>
     <br>
-    <% if (medecin && medecin.length) { %>
+    <% if (medecins && medecins.length) { %>
         <table>
             <thead>
                 <tr>
@@ -43,15 +43,15 @@
                 </tr>
             </thead>
             <tbody>
-                <% medecin.forEach(medecin => { %>
+                <% medecins.forEach(medecins => { %>
                     <tr>
-                        <td><%= medecin.med_id %></td>
-                        <td><%= medecin.med_nom %></td>
-                        <td><%= medecin.med_prenom %></td>
+                        <td><%= medecins.med_id %></td>
+                        <td><%= medecins.med_nom %></td>
+                        <td><%= medecins.med_prenom %></td>
                         <td>
-                            <a href="/medecins/modifier/<%= medecin.med_id %>">Modifier</a>
+                            <a href="/medecins/modifier/<%= medecins.med_id %>"><button>Modifier</button></a>
                             
-                            <form action="/medecins/supprimer/<%= medecin.med_id %>" method="POST">
+                            <form action="/medecins/supprimer/<%= medecins.med_id %>" method="POST">
                                 <button type="submit">Supprimer</button>
                             </form>
                         </td>
