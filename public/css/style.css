@@ -61,3 +61,6 @@ tr:nth-child(even) {
 tr {
   border-bottom: 1px solid #dddddd;
 }
+.on {
+  font-weight: bold;
+}
