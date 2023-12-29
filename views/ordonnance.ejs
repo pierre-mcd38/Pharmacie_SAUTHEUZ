@@ -22,6 +22,22 @@
         <a href="">A propos</a>
         <a href="">Contact</a>
     </div>
+    <form action="/ordonnance/ajouter" method="post">
+        <label for="ordo_medId">MedId:</label>
+        <input type="text" id="ordo_medId" name="ordo_medId" required>
+
+        <label for="ordo_cliId">CliId:</label>
+        <input type="text" id="ordo_cliId" name="ordo_cliId" required>
+
+        <label for="ordo_pathId">PathId:</label>
+        <input type="text" id="ordo_pathId" name="ordo_pathId" required>
+
+        <label for="ordo_date">Date:</label>
+        <input type="text" id="ordo_date" name="ordo_date" required>
+
+        <button type="submit">Ajouter Médecin</button>
+    </form>
+    <br>
     <% if (ordonnance && ordonnance.length) { %>
         <table>
             <thead>
@@ -29,6 +45,7 @@
                     <th>ID</th>
                     <th>Médecin</th>
                     <th>Client</th>
+                    <th>Pathologie</th>
                     <th>Date</th>
                     <th>Action</th>
                 </tr>
@@ -39,6 +56,7 @@
                         <td><%= ordonnance.ordo_id %></td>
                         <td><%= ordonnance.ordo_medId %></td>
                         <td><%= ordonnance.ordo_cliId %></td>
+                        <td><%= ordonnance.ordo_pathId %></td>
                         <td><%= ordonnance.ordo_date %></td>
                         <td>
                             <a href="/ordonnance/modifier/<%= ordonnance.ordo_id %>"><button>Modifier</button></a>

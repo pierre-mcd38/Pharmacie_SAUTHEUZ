@@ -19,7 +19,23 @@ const controlOrd = {
         }
     },
 
+    async ajouterOrdonnance(req, res) {
+        try {
+            const data = await modelOrd.ordonnance.ajouterOrdonnance(req);
     
+            if (data) {
+                res.redirect("ordonnance");
+            } else {
+                console.log("problème lors de l'ajout du médecin");
+                res.redirect("/odrnnance/afficher");
+            }
+        } catch (error) {
+            console.log(error);
+            res.redirect("/ordonnance/afficher");
+        }
+    },
+    
+
 };
 module.exports = {
     controlOrd

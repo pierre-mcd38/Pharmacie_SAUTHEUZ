@@ -30,6 +30,33 @@ const ordonnance = {
         });
     },
     
+    async ajouterOrdonnance(req) {
+
+        let ordo_medId = req.body.ordo_medId
+        let ordo_cliId = req.body.ordo_cliId
+        let ordo_pathId = req.body.ordo_pathId
+        let ordo_date = req.body.ordo_date
+
+        let requete = "INSERT INTO ordonnance (ordo_medId, ordo_cliId, ordo_pathId, ordo_date) VALUES ( ?, ?, ?, ?)"
+
+        return new Promise((reussi, echec) => {
+
+            mysqlconnexion.query(requete, [ordo_medId, ordo_cliId, ordo_pathId, ordo_date], (err, lignes, champs) => {
+
+                if (err) {
+
+                    return echec(err)
+
+                }
+
+                return reussi(lignes)
+
+            })
+        })
+    },
+
+    
+
 };
 
 module.exports = {
