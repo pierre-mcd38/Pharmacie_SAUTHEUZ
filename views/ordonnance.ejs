@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<%= style %>">
     <title>Ordonnance</title>
 </head>
+
 <body>
-    <h1>Ordonnance</h1>
-</body>
-</html>
+    <header>
+        <h1>Pharmacie SAUTHEUZ</h1>
+    </header>
+    <h1>Liste des ordonnances</h1>
+    <div class="sidebar">
+        <a href="/#" class="button"><img src="<%= logo %>" height="60px" width="60px"></a>
+        <hr>
+        <a href="/medecins/afficher">Médecin</a>
+        <a href="/ordonnance" class="on">Ordonnance</a>
+        <a href="">Autre</a>
+        <a href="">A propos</a>
+        <a href="">Contact</a>
+    </div>

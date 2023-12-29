@@ -35,22 +35,21 @@ const controlMed = {
 
 
     async ajouterMedecin(req, res) {
-
         try {
-
-            const data = await modelMed.Medecin.ajouterMedecin(req)
-
+            const data = await modelMed.Medecin.ajouterMedecin(req);
+    
             if (data) {
-                res.redirect("/medecins")
-
+                res.redirect("/medecins/afficher");
             } else {
-                console.log("probleme")
-                res.render("medecins/afficher")
+                console.log("problème lors de l'ajout du médecin");
+                res.redirect("/medecins/afficher");
             }
         } catch (error) {
-            console.log(error)
+            console.log(error);
+            res.redirect("/medecins/afficher");
         }
     },
+    
 
     async supprimerMedecin(req, res) {
         try {
@@ -59,12 +58,12 @@ const controlMed = {
 
             if (data) {
 
-                res.redirect("/medecins");
+                res.redirect("/medecins/afficher");
 
             } else {
 
                 console.log("probleme");
-                res.redirect("medecins");
+                res.redirect("/medecins/afficher");
             }
         } catch (error) {
             console.log(error)
@@ -80,15 +79,14 @@ const controlMed = {
             const data = await modelMed.Medecin.modifierMedecin(medId, medNom, medPrenom);
 
             if (data) {
-                res.redirect("/medecins");
+                res.redirect("/medecins/afficher");
             } else {
                 console.log("probleme");
                 res.redirect("/medecins/afficher");
             }
         } catch (error) {
             console.log(error);
-        }
-        console.log('ctrl')
+        }   
     },
 
 
