@@ -17,8 +17,41 @@
         <a href="/#" class="button"><img src="<%= logo %>" height="60px" width="60px"></a>
         <hr>
         <a href="/medecins/afficher">Médecin</a>
-        <a href="/ordonnance" class="on">Ordonnance</a>
+        <a href="/ordonnance/afficher" class="on">Ordonnance</a>
         <a href="">Autre</a>
         <a href="">A propos</a>
         <a href="">Contact</a>
     </div>
+    <% if (ordonnance && ordonnance.length) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Médecin</th>
+                    <th>Client</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% ordonnance.forEach(ordonnance => { %>
+                    <tr>
+                        <td><%= ordonnance.ordo_id %></td>
+                        <td><%= ordonnance.ordo_medId %></td>
+                        <td><%= ordonnance.ordo_cliId %></td>
+                        <td><%= ordonnance.ordo_date %></td>
+                        <td>
+                            <a href="/ordonnance/modifier/<%= ordonnance.ordo_id %>"><button>Modifier</button></a>
+                            
+                            <form action="/ordonnance/supprimer/<%= ordonnance.ordo_id %>" method="POST">
+                                <button type="submit">Supprimer</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>Aucune ordonnance disponible.</p>
+    <% } %>
+</body>

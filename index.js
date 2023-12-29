@@ -6,14 +6,12 @@ const ejs = require('ejs');
 const bodyParser = require('body-parser');
 const { urlencoded } = require('body-parser');
 
-//git
 const accueilRoute = require('./routes/accueilRoute');
 const medecinsRoute = require('./routes/medecinsRoute');
 const ordonnanceRoute = require('./routes/ordonnanceRoute');
 
 
 const iniparser = require('iniparser');
-const { controlMed } = require('./controllers/medecinsController');
 const configDB = iniparser.parseSync('./DB.ini')
 
 let mysqlconnexion = mysql.createConnection({
@@ -52,10 +50,6 @@ app.get('/', (req, res) => {
     res.send('accueil');
 });
 
-
-app.get('/ordonnance', (req, res) => {
-    res.send('ordonnance');
-});
 
 
 const port = process.env.PORT || 3000;

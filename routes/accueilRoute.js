@@ -35,4 +35,6 @@ router.get('/medecins', (req, res) => {
     });
   });
 
+
+  
 module.exports = router;

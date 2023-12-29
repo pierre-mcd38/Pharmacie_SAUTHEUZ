@@ -1,8 +1,14 @@
 const express = require('express');
-const router = express.Router();
+const routeur = express.Router();
+const ctrlOrdonnance = require('../controllers/OrdonnanceController.js');
 
-router.get('/ordonnance', (req, res) => {
-    res.render('ordonnance');
-});
 
-module.exports = router;
+routeur.get('/ordonnance/afficher',ctrlOrdonnance.controlOrd.afficherOrdonnance);
+/*
+routeur.post('/medecins/ajouter', ctrlMedecin.controlMed.ajouterMedecin);
+routeur.post('/medecins/supprimer/:id', ctrlMedecin.controlMed.supprimerMedecin);
+routeur.get('/medecins/modifier/:id', ctrlMedecin.controlMed.afficherUnMedecin);
+routeur.post('/medecins/modifier', ctrlMedecin.controlMed.modifierMedecin);
+*/
+
+module.exports = routeur;
