@@ -2,7 +2,7 @@ const express = require('express');
 const routeur = express.Router();
 const ctrlMedecin = require('../controllers/medecinsController.js');
 
-
+//différentes routes pour la page médecin
 routeur.get('/medecins/afficher', ctrlMedecin.controlMed.afficherMedecin);
 routeur.post('/medecins/ajouter', ctrlMedecin.controlMed.ajouterMedecin);
 routeur.post('/medecins/supprimer/:id', ctrlMedecin.controlMed.supprimerMedecin);

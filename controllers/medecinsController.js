@@ -1,3 +1,4 @@
+//récupération du model por executer les commandes
 const modelMed = require('../models/modelMedecins');
 
 const controlMed = {
@@ -6,10 +7,10 @@ const controlMed = {
 
         try {
 
-            const data = await modelMed.Medecin.afficherMedecin()
+            const data = await modelMed.Medecin.afficherMedecin() //appel de la fonction afficher dans le modele
 
             if (data) {
-                res.render('medecins', { medecin: data })
+                res.render('medecins', { medecin: data }) //redirection sur la page médecin
 
             } else {
                 res.render('medecins/afficher', { medecin: {} })

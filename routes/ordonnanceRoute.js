@@ -2,7 +2,7 @@ const express = require('express');
 const routeur = express.Router();
 const ctrlOrdonnance = require('../controllers/OrdonnanceController.js');
 
-
+//différentes route pour la page ordonnance
 routeur.get('/ordonnance/afficher',ctrlOrdonnance.controlOrd.afficherOrdonnance);
 routeur.post('/ordonnance/ajouter', ctrlOrdonnance.controlOrd.ajouterOrdonnance);
 /*

@@ -1,8 +1,10 @@
+/*aligner le corps avec la sidebar*/
 body {
   margin-left: 275px; 
-  background-image: url('/public/images/fond_Pharmacie.jpg');
+  background-image: url('/public/images/fond_Pharmacie.jpg'); 
 }
-
+ 
+/*menu*/
 .sidebar {
   width: 250px;
   height: 100%;
@@ -32,6 +34,7 @@ body {
   background-color: #777;
 }
 
+/*"Pharmacie SAUTHEUZ en haut de page*/
 header {
   background-color: #0F4D19;
   color: #6FC27C; 
@@ -42,7 +45,7 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
-
+/*Changer le style du tabeau d'affichage des éléments*/
 table {
   border-collapse: collapse;
   width: 100%;
@@ -61,6 +64,8 @@ tr:nth-child(even) {
 tr {
   border-bottom: 1px solid #dddddd;
 }
+
+/*mettre le menu en gras lorsqu'on est dessus*/
 .on {
   font-weight: bold;
 }
